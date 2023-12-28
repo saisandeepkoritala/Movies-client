@@ -141,11 +141,11 @@ const Movies = () => {
             </select> 
         </div>
         <div>
-          <label>Date Gte</label>
+          <label>From</label>
           <input type="date" value={selectDate} onChange={handleDate}/>
         </div>
         <div>
-          <label>Date Lte</label>
+          <label>To</label>
           <input type="date" value={selectDate1} onChange={handleDate1}/>
         </div>
         <div>

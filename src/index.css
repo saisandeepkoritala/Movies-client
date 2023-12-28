@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
   padding: 0;
   margin: 0;
@@ -53,6 +57,7 @@ input {
 .routes .home .movie-card .card{
   box-shadow: 5px 5px 5px white, -5px -5px 5px white;
   border: 2px solid white;
+  height: 400px;
 }
 
 .react-multi-carousel-list .react-multi-carousel-track .react-multi-carousel-item {
@@ -227,6 +232,9 @@ input {
 .routes .movies .data .card{
   box-shadow: 5px 5px 5px white, -5px -5px 5px white;
   border: 2px solid white;
+  width:300px;
+  height:400px;
+  object-fit: cover;
 }
 
 .routes .detailtv .box{
@@ -259,15 +267,10 @@ input {
 
 .routes .detailtv>div{
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   flex-wrap: wrap;
   gap:1rem;
 
 }
-
-
-
 
 
 
@@ -394,4 +397,10 @@ input {
   width:50vw;
   justify-content: space-between;
 }
+
+.routes .movies .data .card{
+  width:150px;
+  height:150px;
+}
+
 }

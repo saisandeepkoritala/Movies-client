@@ -88,7 +88,7 @@ const Movies = () => {
   if(movies){
     renderMovies=movies.map((movie,i)=>{
       return <Link key={i} to={`/detail/${movie.id}`}>
-          <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className='card' height="400px"></img>
+          <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className='card'></img>
       </Link>
     })
   }
@@ -153,14 +153,13 @@ const Movies = () => {
             <input placeholder='enter year' value={year} onChange={handleChange} type="number"/>
         </div>
         <div>
-          <label>Date Gte</label>
+          <label>Date Start</label>
           <input type="date" value={selectDate} onChange={handleDate}/>
         </div>
         <div>
-          <label>Date Lte</label>
+          <label>Date End</label>
           <input type="date" value={selectDate1} onChange={handleDate1}/>
         </div>
-          {/* <button onClick={handleSubmit}>Submit</button> */}
       </div>
       <div className='data'>
           {renderMovies || loading()}
