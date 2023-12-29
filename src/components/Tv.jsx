@@ -45,13 +45,13 @@ const Movies = () => {
   useEffect(()=>{
     const getLanguage=async()=>{
 
-      const response = await axios.get("http://localhost:5000/getByCountry")
+      const response = await axios.get("https://mern-movies-app.onrender.com/getByCountry")
       Setdata(response?.data?.Movies)
 
-      const responseLang = await axios.get("http://localhost:5000/getLanguage")
+      const responseLang = await axios.get("https://mern-movies-app.onrender.com/getLanguage")
       SetdataLang(responseLang?.data?.Movies)
 
-      const response1=await axios.post("http://localhost:5000/getTv",{
+      const response1=await axios.post("https://mern-movies-app.onrender.com/getTv",{
       year:year,
       country:selectedOption,
       language:selectedOptionLang,

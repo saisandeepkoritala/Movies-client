@@ -45,13 +45,13 @@ const Movies = () => {
   useEffect(()=>{
     const getLanguage=async()=>{
 
-      const response = await axios.get("http://localhost:5000/getByCountry")
+      const response = await axios.get("https://mern-movies-app.onrender.com/getByCountry")
       Setdata(response?.data?.Movies)
 
-      const responseLang = await axios.get("http://localhost:5000/getLanguage")
+      const responseLang = await axios.get("https://mern-movies-app.onrender.com/getLanguage")
       SetdataLang(responseLang?.data?.Movies)
 
-      const response1=await axios.post("http://localhost:5000/getCustomMovies",{
+      const response1=await axios.post("https://mern-movies-app.onrender.com/getCustomMovies",{
       year:year,
       country:selectedOption,
       language:selectedOptionLang,
@@ -120,7 +120,7 @@ const Movies = () => {
 
   const handleMore=async()=>{
     SetPage(page+1);
-    const response=await axios.post("http://localhost:5000/getCustomMovies",{
+    const response=await axios.post("https://mern-movies-app.onrender.com/getCustomMovies",{
       year:year,
       country:selectedOption,
       language:selectedOptionLang,
@@ -153,11 +153,11 @@ const Movies = () => {
             <input placeholder='enter year' value={year} onChange={handleChange} type="number"/>
         </div>
         <div>
-          <label>Date Start</label>
+          <label>From</label>
           <input type="date" value={selectDate} onChange={handleDate}/>
         </div>
         <div>
-          <label>Date End</label>
+          <label>To</label>
           <input type="date" value={selectDate1} onChange={handleDate1}/>
         </div>
       </div>

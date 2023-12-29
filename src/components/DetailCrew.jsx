@@ -10,7 +10,7 @@ const DetailCrew = () => {
     useEffect(()=>{
 
         const fetchInfo=async()=>{
-            const response = await axios.post("http://localhost:5000/getActorInfo",{
+            const response = await axios.post("https://mern-movies-app.onrender.com/getActorInfo",{
                 id:Id.id
             })
             Setdata(response.data.Movies)

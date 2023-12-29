@@ -129,8 +129,8 @@ input {
 }
 
 .routes .detailcrew .profile .pic img{
-  height: 70vh;
-  width:20vw;
+  height:60vh;
+  width:25vw;
   box-shadow: 5px 5px 5px rgb(112, 108, 108), -5px -5px 5px rgb(219, 216, 216);
   border:1px solid white;
 }
@@ -354,7 +354,8 @@ input {
   }
 
   .routes .detailcrew .profile .pic img{
-    width:50vw;
+    width:200px;
+    height:250px;
   }
 
   .routes .movies .header{
@@ -372,13 +373,13 @@ input {
 .routes .movies .header select{
   font-size: 0.8rem;
   height: 2rem;
-  width: 70%;
+  width: 65%;
   font-size: 1rem;
 }
 
 .routes .movies .header input{
   height: 2rem;
-  width: 70%;
+  width: 65%;
   font-size: 0.8rem;
   font-size: 1rem;
 }

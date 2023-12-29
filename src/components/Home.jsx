@@ -15,13 +15,13 @@ const Home = () => {
 
     const getData=async()=>{
 
-      const fectheddata = await axios.get("http://localhost:5000/getTeluguMovies")
+      const fectheddata = await axios.get("https://mern-movies-app.onrender.com/getTeluguMovies")
       SetteluguData(fectheddata.data?.Movies?.results)
 
-      const fecthedhindi = await axios.get("http://localhost:5000/getHindiMovies")
+      const fecthedhindi = await axios.get("https://mern-movies-app.onrender.com/getHindiMovies")
       SethindiData(fecthedhindi.data?.Movies?.results)
 
-      const fecthedtamil = await axios.get("http://localhost:5000/getTamilMovies")
+      const fecthedtamil = await axios.get("https://mern-movies-app.onrender.com/getTamilMovies")
       SettamilData(fecthedtamil.data?.Movies?.results)
 
     }

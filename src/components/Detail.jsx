@@ -21,19 +21,19 @@ const Detail = () => {
 
     const getData=async()=>{
 
-      const fectheddata = await axios.post("http://localhost:5000/getDetails",{
+      const fectheddata = await axios.post("https://mern-movies-app.onrender.com/getDetails",{
         id:MovieId.id
       })
       Setdata(fectheddata.data?.Movies)
 
-      const creditdata= await axios.post("http://localhost:5000/getCredits",{
+      const creditdata= await axios.post("https://mern-movies-app.onrender.com/getCredits",{
         id:MovieId.id
       })
 
       Setcast(creditdata.data?.Movies?.cast)
       Setcrew(creditdata.data?.Movies?.crew)
 
-      const picsdata= await axios.post("http://localhost:5000/getPics",{
+      const picsdata= await axios.post("https://mern-movies-app.onrender.com/getPics",{
         id:MovieId.id
       })
       Setpics([...picsdata.data?.Movies?.posters,...picsdata.data?.Movies?.backdrops])

@@ -14,12 +14,12 @@ const DetailTv = () => {
 
     useEffect(()=>{
         const getTv=async()=>{
-            const resp= await axios.post("http://localhost:5000/getTvDetail",{
+            const resp= await axios.post("https://mern-movies-app.onrender.com/getTvDetail",{
                 id:id.id
             })
             Setdata(resp.data.Movies);
 
-            const resp1=await axios.post("http://localhost:5000/getTvCrew",{
+            const resp1=await axios.post("https://mern-movies-app.onrender.com/getTvCrew",{
                 id:id.id
             })
             Setcrew(resp1.data.Movies.crew);
