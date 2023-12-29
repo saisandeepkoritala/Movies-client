@@ -2,10 +2,12 @@ import { useParams,Link } from 'react-router-dom'
 import { useState,useEffect } from 'react';
 import {RotatingLines} from "react-loader-spinner"
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Detail = () => {
 
   const MovieId=useParams();
+  const navigate=useNavigate();
 
   const[data,Setdata]=useState([]);
   const[crew,Setcrew]=useState([]);
@@ -56,6 +58,7 @@ const Detail = () => {
   }
 
   if(data){
+    console.log(data)
     render=
       <div className='card'>
         <img
@@ -67,6 +70,8 @@ const Detail = () => {
           <p><strong>Title :- </strong>{data.title}</p>
           <p><strong>Movie Plot :- </strong>{data.overview}</p>
           <p><strong>Release Date :- </strong>{data.release_date}</p>
+          <p className="link" onClick={()=>navigate(`/movievideo/${data.id}`)}>
+            <strong>Click here for Videos</strong></p>
         </div>
       </div>
   }

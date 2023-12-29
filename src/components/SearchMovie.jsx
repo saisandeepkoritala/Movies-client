@@ -2,6 +2,7 @@ import {useState ,useEffect} from 'react';
 import {Link} from "react-router-dom";
 import axios from "axios";
 import {RotatingLines} from "react-loader-spinner";
+import empty from "../images/empty.png";
 
 const SearchMovie = () => {
 
@@ -72,10 +73,18 @@ const SearchMovie = () => {
 
     if(movies){
         renderMovies=movies.map((movie,i)=>{
-        return <Link key={i} to={`/detail/${movie.id}`}>
-            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className='card' height="400px"></img>
+            if(movie.poster_path){
+                return <Link key={i} to={`/detail/${movie.id}`}>
+                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" className='card' height="400px"></img>
+                <p></p>
+            </Link>
+            }
+            else{
+                return <Link key={i} to={`/detail/${movie.id}`}>
+            <img src={empty} alt="" className='card' height="400px"></img>
             <p></p>
         </Link>
+            }
         })
     }
     else{

@@ -74,6 +74,7 @@ input {
   justify-content: center;
   flex-direction: column;
   width:100%;
+  object-fit: contain;
 }
 
 .routes .detail .card div p{
@@ -89,6 +90,14 @@ input {
 .routes .detail .card .pic{
   width:95vw;
   border:1px solid white;
+}
+
+.routes .detail .card .link{
+  cursor: pointer;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .routes .detail .card >div p{
