@@ -63,7 +63,7 @@ const Movies = () => {
 
     }
     getLanguage();
-    console.log(page,selectDate,selectDate1,selectedOption,selectedOptionLang,year)
+    
   },[page,selectDate,selectDate1,selectedOption,selectedOptionLang,year])
 
   let render=[];

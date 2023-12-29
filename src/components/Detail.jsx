@@ -11,11 +11,13 @@ const Detail = () => {
   const[crew,Setcrew]=useState([]);
   const[cast,Setcast]=useState([]);
   const[pics,Setpics]=useState([]);
+  const[pics1,Setpics1]=useState([]);
 
   let render;
   let rendercast;
   let rendercrew;
   let renderpics="";
+  let renderpics1="";
 
   useEffect(()=>{
 
@@ -36,11 +38,12 @@ const Detail = () => {
       const picsdata= await axios.post("https://mern-movies-app.onrender.com/getPics",{
         id:MovieId.id
       })
-      Setpics([...picsdata.data?.Movies?.posters,...picsdata.data?.Movies?.backdrops])
+      Setpics([...picsdata.data?.Movies?.posters])
+      Setpics1([...picsdata.data?.Movies?.backdrops])
     }
     getData()
 
-  },[])
+  },[MovieId])
 
   const loading=()=>{
     return <RotatingLines
@@ -118,6 +121,18 @@ const Detail = () => {
     renderpics=loading()
   }
 
+  if(pics1){
+    renderpics1=pics1.map((item,i)=>{
+      return <div key={i}>
+          <img src={`https://image.tmdb.org/t/p/original${item.file_path}`} alt="" className='pic'/>
+      </div>
+    })
+  }
+
+  else{
+    renderpics1=loading()
+  }
+
   
   return (
     <div className='detail'>
@@ -130,9 +145,13 @@ const Detail = () => {
       <div className='crew'>
         {rendercrew}
       </div>
-      <p>Movie Pics are : </p>
+      <p>Movie Pics : </p>
       <div className='snaps'>
         {renderpics}
+      </div>
+      <p>Other Snaps :</p>
+      <div className='snaps'>
+        {renderpics1}
       </div>
     </div>
   )
